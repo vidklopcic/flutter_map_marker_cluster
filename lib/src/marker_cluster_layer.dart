@@ -177,6 +177,7 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
       key: marker.key ?? ObjectKey(marker.marker),
       child: MarkerWidget(
         marker: marker,
+        noGestures: widget.options.noGestures,
         onTap: _onMarkerTap(marker),
         onHover: (bool value) => _onMarkerHover(marker, value),
         buildOnHover: widget.options.popupOptions?.buildPopupOnHover ?? false,
