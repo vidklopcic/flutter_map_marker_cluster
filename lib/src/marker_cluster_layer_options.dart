@@ -93,6 +93,9 @@ class MarkerClusterLayerOptions extends LayerOptions {
   /// Cluster builder
   final ClusterWidgetBuilder builder;
 
+  /// No gestures
+  final bool noGestures;
+
   /// List of markers
   final List<Marker> markers;
 
@@ -190,6 +193,7 @@ class MarkerClusterLayerOptions extends LayerOptions {
   MarkerClusterLayerOptions({
     required this.builder,
     this.rotate,
+    this.noGestures=false,
     this.rotateOrigin,
     this.rotateAlignment,
     this.markers = const [],

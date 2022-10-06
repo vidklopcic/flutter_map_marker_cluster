@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map_marker_cluster/src/node/marker_node.dart';
 
 class MarkerWidget extends StatelessWidget {
+  final bool noGestures;
   final MarkerNode marker;
   final VoidCallback onTap;
   final Function(bool)? onHover;
@@ -14,10 +15,12 @@ class MarkerWidget extends StatelessWidget {
     this.onHover,
     this.buildOnHover = false,
     this.hoverOnTap,
+    this.noGestures = false,
   }) : super(key: ObjectKey(marker));
 
   @override
   Widget build(BuildContext context) {
+    if (noGestures) return marker.builder(context);
     return GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: buildOnHover && hoverOnTap != null ? hoverOnTap : onTap,

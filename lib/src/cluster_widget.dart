@@ -4,7 +4,7 @@ import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 class ClusterWidget extends StatelessWidget {
   final MarkerClusterNode cluster;
   final ClusterWidgetBuilder builder;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   ClusterWidget({
     required this.cluster,
@@ -14,6 +14,7 @@ class ClusterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (onTap == null) return builder(context, cluster.mapMarkers);
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: onTap,

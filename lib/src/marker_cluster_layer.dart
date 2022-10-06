@@ -322,7 +322,7 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         child: ClusterWidget(
           cluster: markerNode.parent!,
           builder: widget.options.builder,
-          onTap: _onClusterTap(markerNode.parent!),
+          onTap: widget.options.noGestures ? null : _onClusterTap(markerNode.parent!),
         ),
       ),
     );
@@ -350,7 +350,7 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
           child: ClusterWidget(
             cluster: clusterNode,
             builder: widget.options.builder,
-            onTap: _onClusterTap(clusterNode),
+            onTap: widget.options.noGestures ? null : _onClusterTap(clusterNode),
           ),
         ),
       );
@@ -372,7 +372,7 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         child: ClusterWidget(
           cluster: clusterNode,
           builder: widget.options.builder,
-          onTap: _onClusterTap(clusterNode),
+          onTap: widget.options.noGestures ? null : _onClusterTap(clusterNode),
         ),
       ),
     );
@@ -410,7 +410,7 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
             child: ClusterWidget(
               cluster: child,
               builder: widget.options.builder,
-              onTap: _onClusterTap(child),
+              onTap: widget.options.noGestures ? null : _onClusterTap(child),
             ),
           ),
         );
@@ -440,7 +440,7 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         child: ClusterWidget(
           cluster: clusterNode,
           builder: widget.options.builder,
-          onTap: _onClusterTap(clusterNode),
+          onTap: widget.options.noGestures ? null : _onClusterTap(clusterNode),
         ),
       ),
       //parent
@@ -452,7 +452,7 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         child: ClusterWidget(
           cluster: clusterNode.parent!,
           builder: widget.options.builder,
-          onTap: _onClusterTap(clusterNode.parent!),
+          onTap: widget.options.noGestures ? null : _onClusterTap(clusterNode.parent!),
         ),
       ),
     ];
@@ -472,7 +472,7 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         child: ClusterWidget(
           cluster: cluster,
           builder: widget.options.builder,
-          onTap: _onClusterTap(cluster),
+          onTap: widget.options.noGestures ? null : _onClusterTap(cluster),
         ),
       ),
     );
